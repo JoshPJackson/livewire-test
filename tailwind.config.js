@@ -2,17 +2,11 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 const colors = require('tailwindcss/colors');
 
 module.exports = {
-    variants: {
-        extend: {
-            pointerEvents: ['hover', 'focus']
-        }
-    },
-    purge: [
+    content: [
         './resources/**/*.blade.php',
         './resources/**/*.js',
         './resources/**/*.vue',
     ],
-    darkMode: false, // or 'media' or 'class'
     theme: {
         extend: {
             fontFamily: {
@@ -43,6 +37,9 @@ module.exports = {
             }),
             border: {
                 'purple': '1px solid #BB4DF0 !important'
+            },
+            gridTemplateColumns: {
+                "min-auto-1": "min-content auto"
             }
         }
     },
