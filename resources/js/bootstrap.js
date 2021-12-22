@@ -1,4 +1,6 @@
 window._ = require('lodash');
+import Chart from "chart.js/auto"
+window.Chart = Chart
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
