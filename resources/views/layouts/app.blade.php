@@ -46,7 +46,7 @@
         <i class="lni lni-search-alt right top-4 -translate-x-8 bg-white"></i>
     </div>
     <div class="pr-8 text-right">
-        <span class="align-center relative bottom-1 mr-1">Mr A N Other</span>
+        <span class="align-center relative bottom-1 mr-1">{{ auth()->user()->name }}</span>
         <a href="#" class="hover:text-purple">
             <i class="lni lni-user bg-white rounded-full text-3xl text-purple border hover:border-purple"></i>
             <i class="lni lni-chevron-down pl-1 text-sm relative bottom-1"></i>
