@@ -2,16 +2,16 @@
 
 namespace Database\Factories;
 
-use App\Models\CampaignLink;
+use App\Models\Link;
 use App\Models\User;
 use DateTime;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
 
-class CampaignLinkFactory extends Factory
+class LinkFactory extends Factory
 {
-    protected $model = CampaignLink::class;
+    protected $model = Link::class;
 
     /**
      * Define the model's default state.

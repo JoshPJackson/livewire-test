@@ -30,7 +30,7 @@
             <a href="#" class="text-header">Dashboards <i class="lni lni-chevron-down text-sm"></i></a>
         </div>
         <div class="mt-1">
-            <a href="#" class="text-header">Links</a>
+            <a href="{{ route('links.index') }}" class="text-header">Links</a>
         </div>
         <div class="mt-1">
             <a href="#" class="text-header">Campaigns</a>

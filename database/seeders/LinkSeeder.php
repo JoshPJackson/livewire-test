@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\CampaignLink;
+use App\Models\Link;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
-class CampaignLinkSeeder extends Seeder
+class LinkSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -20,7 +20,7 @@ class CampaignLinkSeeder extends Seeder
 
         foreach ($users as $user) {
             $numberOfLinks = mt_rand(0, 10);
-            CampaignLink::factory()->count($numberOfLinks)->ownedBy($user->id)->create();
+            Link::factory()->count($numberOfLinks)->ownedBy($user->id)->create();
         }
     }
 }

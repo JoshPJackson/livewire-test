@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCampaignLinksTable extends Migration
+class CreateLinksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateCampaignLinksTable extends Migration
      */
     public function up()
     {
-        Schema::create('campaign_links', function (Blueprint $table) {
+        Schema::create('links', function (Blueprint $table) {
             $table->id();
             $table->string('path');
             $table->string('destination');
@@ -31,6 +31,6 @@ class CreateCampaignLinksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('campaign_links');
+        Schema::dropIfExists('links');
     }
 }
