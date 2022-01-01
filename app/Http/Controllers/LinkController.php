@@ -14,4 +14,9 @@ class LinkController extends Controller
             'links' => $links
         ]);
     }
+
+    public function create()
+    {
+        return view('links.create');
+    }
 }
