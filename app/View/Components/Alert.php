@@ -7,33 +7,34 @@ use Illuminate\View\Component;
 
 class Alert extends Component
 {
-    public string $contextClass = '';
-
     public string $message = '';
 
-    public function set(string $message, AlertType $alertType = AlertType::SUCCESS)
+    public AlertType $type = AlertType::SUCCESS;
+
+    public function __construct(string $message = '', $alertType = AlertType::SUCCESS)
     {
         $this->message = $message;
-        $this->setContextClassFromAlertType($alertType);
+        $this->type = $alertType;
     }
 
-    public function setContextClassFromAlertType(AlertType $alertType)
+    public function setContextClassFromAlertType()
     {
-        $this->contextClass = ($alertType == AlertType::SUCCESS->value ? 'success' : 'error');
+        return $this->type == AlertType::SUCCESS->value ? 'success' : 'danger';
     }
 
-    public function getClassListFromType()
+    public function getClassesFromType()
     {
-        return [
-            'border-' . $this->contextClass,
-            'text-' . $this->contextClass
-        ];
+        $contextClass = $this->setContextClassFromAlertType();
+
+        return implode(' ', [
+            'border',
+            'border-' . $contextClass,
+            'text-' . $contextClass
+        ]);
     }
 
     public function render()
     {
-        return view('components.alert', [
-            'class' => implode(' ', $this->getClassListFromType())
-        ]);
+        return view('components.alert');
     }
 }

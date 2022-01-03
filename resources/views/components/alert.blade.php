@@ -1,3 +1,7 @@
-<div {{ $attributes->merge(['class' => 'border']) }}>
+@props([
+    'message',
+])
+
+<div {{ $attributes->merge(['class' => $getClassesFromType()]) }}>
     {{ $message }}
 </div>

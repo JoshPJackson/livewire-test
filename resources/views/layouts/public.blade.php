@@ -24,7 +24,7 @@
 <body>
 @livewireScripts
 <div id="app" class="h-screen">
-    @yield('content')
+    {{ $slot ?? '' }}
 </div>
 </body>
 </html>
