@@ -1,19 +1,19 @@
 <?php
 
-namespace App\View\Components;
+namespace App\View\Components\Campaigns\Index;
 
 use Illuminate\View\Component;
 
-class Card extends Component
+class GalleryCard extends Component
 {
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct(public string $header, public $headerLinks = '', public string $bodyClass)
+    public function __construct(public string $name, public int $interactions = 0, public int $uniqueInteractions = 0)
     {
-
+        //
     }
 
     /**
@@ -23,6 +23,6 @@ class Card extends Component
      */
     public function render()
     {
-        return view('components.card');
+        return view('components.campaigns.index.gallery-card');
     }
 }

@@ -39,7 +39,8 @@ module.exports = {
                 'purple': '1px solid #BB4DF0 !important'
             },
             gridTemplateColumns: {
-                "min-auto-1": "min-content auto"
+                "min-auto-1": "min-content auto",
+                "auto-min-1": "auto min-content"
             }
         }
     },

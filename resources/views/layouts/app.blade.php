@@ -34,7 +34,7 @@
             <a href="{{ route('links.index') }}" class="text-header">Links</a>
         </div>
         <div class="mt-1">
-            <a href="#" class="text-header">Campaigns</a>
+            <a href="{{ route('campaigns.index') }}" class="text-header">Campaigns</a>
         </div>
         <div class="mt-1">
             <a href="#" class="text-header">Targets</a>
@@ -61,7 +61,7 @@
     </form>
 </div>
 <div class="p-5">
-    {{ $slot = '' }}
+    {{ $slot ?? '' }}
 </div>
 </body>
 </html>
