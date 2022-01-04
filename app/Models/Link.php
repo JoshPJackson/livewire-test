@@ -15,6 +15,7 @@ class Link extends Model
         'path',
         'destination',
         'owner_user_id',
+        'campaign_id'
     ];
 
     public function currentOwner(): BelongsTo|User

@@ -15,7 +15,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             DevSeeder::class,
-            LinkSeeder::class
+            DefaultCampaignSeeder::class,
+            CampaignSeeder::class
         ]);
     }
 }
