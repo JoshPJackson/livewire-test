@@ -9,7 +9,7 @@
             @endif
         </div>
     @endif
-    <div class="{{ $bodyClass }}">
+    <div class="{{ $bodyClass ?? '' }}">
         {{ $slot }}
     </div>
 </div>
