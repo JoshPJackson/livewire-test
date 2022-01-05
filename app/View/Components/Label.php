@@ -11,7 +11,7 @@ class Label extends Component
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(public bool $required = false)
     {
         //
     }
