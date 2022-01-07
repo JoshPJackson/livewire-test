@@ -2,7 +2,7 @@
     <div class="flex gap-3">
 
         @foreach ($campaigns as $campaign)
-            <x-campaigns.index.gallery-card :name="$campaign->name" :interactions="1234" :unique-interactions="567"/>
+            <x-campaigns.index.gallery-card :name="$campaign->name" :interactions="1234" :unique-interactions="567" :campaign-id="$campaign->id"/>
         @endforeach
 
         <x-card header="" class="hover:cursor-pointer hover:border-purple hover:bg-purple-100" @click="showCreateModal = true">

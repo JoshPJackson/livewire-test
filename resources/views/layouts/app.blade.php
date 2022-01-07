@@ -20,6 +20,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @livewireStyles
 </head>
 <body class="bg-gray-100" x-data="{ showAccountDropdown: false }">
 <div class="bg-gray-200 grid grid-cols-3 items-center py-2 shadow">
@@ -62,6 +63,7 @@
 </div>
 <div class="p-5">
     {{ $slot ?? '' }}
+    @livewireScripts
 </div>
 </body>
 </html>
