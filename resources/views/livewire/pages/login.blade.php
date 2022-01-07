@@ -10,9 +10,9 @@
             @csrf
 
             <div class="grid grid-cols-min-auto-1 gap-x-2">
-                <label for="email" class="mb-2 text-lg text-sans w-min mt-2 font-thin">Email</label>
+                <x-label-lg for="email">Email</x-label-lg>
                 <x-basic-input wire:model.lazy="email" placeholder="me@me.com"/>
-                <label for="password" class="mb-2 text-lg text-sans w-min mt-2 font-thin">Password</label>
+                <x-label-lg for="password">Password</x-label-lg>
                 <x-basic-input type="password" wire:model.lazy="password"/>
             </div>
 
