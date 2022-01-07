@@ -10,7 +10,8 @@ class Campaign extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name'
+        'name',
+        'user_id'
     ];
 
     public function user()

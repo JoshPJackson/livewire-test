@@ -11,8 +11,19 @@ class Create extends Component
     public string $name = '';
 
     protected $rules = [
-        'name' => ['required', 'string', CampaignNameUniqueForUser::class]
+        'name' => ['required', 'string']
     ];
+
+    public function __construct($id = null)
+    {
+        parent::__construct($id);
+        $this->rules['name'][] = new CampaignNameUniqueForUser();
+    }
+
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName);
+    }
 
     public function save()
     {

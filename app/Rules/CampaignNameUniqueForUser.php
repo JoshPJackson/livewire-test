@@ -16,7 +16,7 @@ class CampaignNameUniqueForUser implements Rule
      */
     public function passes($attribute, $value)
     {
-        return !UserCampaign::where('name', $value)->doesntExist();
+        return UserCampaign::where('name', $value)->doesntExist();
     }
 
     /**
