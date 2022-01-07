@@ -1,4 +1,7 @@
 <x-tabs :tabs="$tabNames">
+    <x-slot name="right">
+        <a href="{{ route('campaigns.index') }}" class="text-blue-300 hover:underline">Back to campaigns</a>
+    </x-slot>
     <x-tab title="basic">
         <div class="grid grid-cols-2">
             <div class="grid grid-cols-min-auto-1 gap-2">
