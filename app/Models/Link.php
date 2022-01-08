@@ -18,6 +18,8 @@ class Link extends Model
         'campaign_id'
     ];
 
+    protected $touches = ['campaignLink'];
+
     public function currentOwner(): BelongsTo|User
     {
         return $this->belongsTo(User::class, 'owner_user_id');
@@ -26,5 +28,10 @@ class Link extends Model
     public function scopeOwnedBy(Builder $builder, int $userId)
     {
         $builder->where('owner_user_id', $userId);
+    }
+
+    public function campaignLink()
+    {
+        return $this->belongsTo(CampaignLink::class);
     }
 }

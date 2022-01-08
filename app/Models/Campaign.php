@@ -18,4 +18,9 @@ class Campaign extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function links()
+    {
+        return $this->belongsToMany(Link::class, 'campaign_links');
+    }
 }
