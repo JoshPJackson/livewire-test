@@ -11,7 +11,7 @@ module.exports = {
         extend: {
             fontFamily: {
                 header: ['Raleway', ...defaultTheme.fontFamily.sans],
-                sans: ['OpenSans', ...defaultTheme.fontFamily.sans],
+                sans: ['Raleway', ...defaultTheme.fontFamily.sans],
             },
             colors: {
                 purple: {
@@ -40,7 +40,8 @@ module.exports = {
             },
             gridTemplateColumns: {
                 "min-auto-1": "min-content auto",
-                "auto-min-1": "auto min-content"
+                "auto-min-1": "auto min-content",
+                "link-table": "min-content auto min-content min-content min-content"
             }
         }
     },
