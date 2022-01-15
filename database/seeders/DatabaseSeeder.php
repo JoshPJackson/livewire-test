@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
             DevSeeder::class,
             DefaultCampaignSeeder::class,
             CampaignSeeder::class,
-            LinkSeeder::class
+            LinkSeeder::class,
+            InteractionSeeder::class
         ]);
     }
 }
