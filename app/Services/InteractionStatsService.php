@@ -7,13 +7,15 @@ use Illuminate\Database\Eloquent\Builder;
 
 class InteractionStatsService
 {
-    protected int $linkId;
+    protected int $linkId = 0;
 
-    protected int $campaignId;
+    protected int $campaignId = 0;
 
     protected Builder $query;
 
     protected bool $unique = false;
+
+    protected int $userId = 0;
 
     public function __construct()
     {
@@ -23,7 +25,8 @@ class InteractionStatsService
     protected function baseQuery(): Builder
     {
         return Interaction::query()
-            ->join('campaign_links', 'interactions.campaign_link_id', '=', 'campaign_links.id');
+            ->join('campaign_links', 'interactions.campaign_link_id', '=', 'campaign_links.id')
+            ->join('links', 'campaign_links.link_id', '=', 'links.id');
     }
 
     public function forLink(int $linkId): self
@@ -57,6 +60,21 @@ class InteractionStatsService
             $this->query->where('campaign_id' , $this->campaignId);
         }
 
+        if ($this->userId) {
+            $this->query->where('owner_user_id', $this->userId);
+        }
+
+        if ($this->unique) {
+            $this->query->distinct('ip');
+        }
+
         return $this->query->count();
+    }
+
+    public function forUser(int $userId): self
+    {
+        $this->userId = $userId;
+
+        return $this;
     }
 }
