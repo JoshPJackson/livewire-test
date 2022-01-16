@@ -34,4 +34,9 @@ class Link extends Model
     {
         return $this->belongsTo(CampaignLink::class);
     }
+
+    public function interactions()
+    {
+        return $this->hasManyThrough(Interaction::class, CampaignLink::class, 'link_id', 'campaign_link_id');
+    }
 }
