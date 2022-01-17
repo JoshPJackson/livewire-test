@@ -54,7 +54,7 @@ class Link extends Model
 
     public function scopeWithTotalUniqueInteractionsCount(Builder $query, int $campaignId = null): Builder
     {
-        $query->withCount(['interactions as unique_interactions' => function ($innerQuery) {
+        $query->withCount(['interactions as unique_interactions_count' => function ($innerQuery) {
             $innerQuery->select(DB::raw('count(distinct(ip))'));
         }]);
 

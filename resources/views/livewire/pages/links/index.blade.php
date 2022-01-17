@@ -11,7 +11,7 @@
                     <th class="p-3">Path</th>
                     <th class="p-3">Destination</th>
                     <th class="p-3">State</th>
-                    <th class="p-3">Impressions</th>
+                    <th class="p-3">Unique Impressions</th>
                     <th class="p-3">Total Impressions</th>
                 </tr>
             </thead>
@@ -21,8 +21,8 @@
                         <td class="p-3">{{ $link->path }}</td>
                         <td class="p-3">{{ $link->destination }}</td>
                         <td class="p-3">{!! \Illuminate\Support\Arr::random(['<span class="text-success">Active</span>', '<span class="text-warning">Pending</span>', '<span class="text-gray-500">Inactive</span>']) !!}</td>
-                        <td class="p-3">{{ mt_rand(0, 5) }}</td>
-                        <td class="p-3">{{ mt_rand(0, 10) }}</td>
+                        <td class="p-3">{{ $link->unique_interactions_count }}</td>
+                        <td class="p-3">{{ $link->interactions_count }}</td>
                     </tr>
                 @endforeach
             </tbody>
