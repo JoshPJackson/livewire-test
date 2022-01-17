@@ -2,7 +2,6 @@
 
 namespace App\Http\Livewire\Pages\Campaigns;
 
-use App\Models\Campaign;
 use App\Models\UserCampaign;
 use Illuminate\Support\Collection;
 use Livewire\Component;
@@ -13,7 +12,7 @@ class Index extends Component
 
     public function setCampaigns()
     {
-        $this->campaigns = UserCampaign::get();
+        $this->campaigns = UserCampaign::withTotalInteractionsCount()->withTotalUniqueInteractionsCount()->get();
     }
 
     public function mount()

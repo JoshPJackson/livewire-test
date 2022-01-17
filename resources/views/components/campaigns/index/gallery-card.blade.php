@@ -2,8 +2,8 @@
     <div class="px-5 py-5">
         <x-text.h2>{{ $name }}</x-text.h2>
         <div>
-            <div>{{ mt_rand(0, 10000) }} interactions</div>
-            <div>{{ mt_rand(0, 3000) }} unique interactions</div>
+            <div>{{ $totalInteractionsCount }} interactions</div>
+            <div>{{ $uniqueInteractionsCount }} unique interactions</div>
         </div>
     </div>
     <div class="grid grid-rows-3 border-gray-100 border-l">

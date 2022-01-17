@@ -11,7 +11,7 @@ class GalleryCard extends Component
      *
      * @return void
      */
-    public function __construct(public int $campaignId, public string $name, public int $interactions = 0, public int $uniqueInteractions = 0)
+    public function __construct(public int $campaignId, public string $name, public int $totalInteractionsCount, public int $uniqueInteractionsCount)
     {
         //
     }

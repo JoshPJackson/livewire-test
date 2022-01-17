@@ -3,7 +3,7 @@
     <div class="flex gap-3">
 
         @foreach ($campaigns as $campaign)
-            <x-campaigns.index.gallery-card :name="$campaign->name" :interactions="1234" :unique-interactions="567"
+            <x-campaigns.index.gallery-card :name="$campaign->name" :total-interactions-count="$campaign->total_interactions_count" :unique-interactions-count="$campaign->unique_interactions_count"
                                             :campaign-id="$campaign->id"/>
         @endforeach
 
