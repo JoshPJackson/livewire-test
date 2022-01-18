@@ -7,7 +7,7 @@ use Livewire\Component;
 
 class View extends Component
 {
-    public Campaign $campaign;
+    public $campaign;
 
     public array $tabNames = [
         'basic' => 'Basic',
@@ -17,6 +17,13 @@ class View extends Component
         'targets' => 'Targets',
         'alerts' => 'Alerts'
     ];
+
+    public function mount($campaign)
+    {
+        $this->campaign = Campaign::with(['links' => function ($query) use ($campaign) {
+            $query->withTotalInteractionsCount($campaign)->withTotalUniqueInteractionsCount($campaign);
+        }])->find($campaign);
+    }
 
     public function render()
     {

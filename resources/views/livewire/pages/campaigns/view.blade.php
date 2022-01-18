@@ -1,5 +1,5 @@
 <div>
-    <x-text.h1>{{ $campaign->name }} Campaign</x-text.h1>
+    <x-text.h1 class="mb-4">{{ $campaign->name }} Campaign</x-text.h1>
     <x-tabs :tabs="$tabNames">
         <x-slot name="right">
             <a href="{{ route('campaigns.index') }}" class="text-blue-300 hover:underline">Back to campaigns</a>
