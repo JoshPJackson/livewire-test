@@ -402,6 +402,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bottom-1{
   bottom: 0.25rem;
 }
+.top-3{
+  top: 0.75rem;
+}
 .z-10{
   z-index: 10;
 }
@@ -470,6 +473,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .mt-6{
   margin-top: 1.5rem;
+}
+.mr-3{
+  margin-right: 0.75rem;
+}
+.mt-10{
+  margin-top: 2.5rem;
 }
 .inline-block{
   display: inline-block;
@@ -570,6 +579,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .transform{
   transform: var(--tw-transform);
+}
+.appearance-none{
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 .grid-cols-4{
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -758,6 +772,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 1rem;
   padding-right: 1rem;
 }
+.px-2{
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
 .px-10{
   padding-left: 2.5rem;
   padding-right: 2.5rem;
@@ -793,6 +811,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pb-1{
   padding-bottom: 0.25rem;
+}
+.pl-4{
+  padding-left: 1rem;
+}
+.pl-8{
+  padding-left: 2rem;
+}
+.pl-5{
+  padding-left: 1.25rem;
 }
 .text-left{
   text-align: left;
