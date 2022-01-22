@@ -2,7 +2,8 @@
     <div class="flex justify-between mb-4">
         <x-text.h1>Link Bank</x-text.h1>
         <div class="flex">
-            <x-select-input :options="App\Enums\LinkStatus::toArray()" class="mr-3"/>
+            <span class="self-center mr-3">Filter:</span>
+            <x-select-input :options="$stateOptions" class="mr-3 text-center" wire:model="stateFilterValue" wire:change="filterByState" placeholder="State"/>
             <x-buttons.primary-link href="{{ route('links.create') }}"><i class="lni lni-plus mr-2"></i>Add New</x-buttons.primary-link>
         </div>
     </div>
@@ -23,7 +24,18 @@
                     <tr class="border-2 border-transparent hover:border-blue-300 hover:bg-blue-100 hover:cursor-pointer">
                         <td class="p-3">{{ $link->path }}</td>
                         <td class="p-3">{{ $link->destination }}</td>
-                        <td class="p-3">{!! \Illuminate\Support\Arr::random(['<span class="text-success">Active</span>', '<span class="text-warning">Pending</span>', '<span class="text-gray-500">Inactive</span>']) !!}</td>
+                        <td class="p-3">
+                            @switch ($link->status)
+                                @case(App\Enums\LinkStatus::ACTIVE)
+                                    <span class="text-success">Active</span>
+                                    @break
+                                @case(App\Enums\LinkStatus::INACTIVE)
+                                    <span class="text-gray-500">Inactive</span>
+                                    @break
+                                @default
+                                    <span class="text-warning">Disabled</span>
+                            @endswitch
+                        </td>
                         <td class="p-3">{{ $link->unique_interactions_count }}</td>
                         <td class="p-3">{{ $link->interactions_count }}</td>
                     </tr>

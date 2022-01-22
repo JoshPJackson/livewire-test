@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\LinkStatus;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -17,10 +18,15 @@ class Link extends Model
         'path',
         'destination',
         'owner_user_id',
-        'campaign_id'
+        'campaign_id',
+        'status'
     ];
 
     protected $touches = ['campaignLink'];
+
+    protected $casts = [
+        'status' => LinkStatus::class
+    ];
 
     public function currentOwner(): BelongsTo|User
     {
@@ -63,5 +69,9 @@ class Link extends Model
         }
 
         return $query;
+    }
+
+    public function scopeWithStatus(Builder $builder, LinkStatus $linkStatus) {
+        $builder->where('status', $linkStatus);
     }
 }

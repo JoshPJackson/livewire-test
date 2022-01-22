@@ -11,7 +11,7 @@ class SelectInput extends Component
      *
      * @return void
      */
-    public function __construct(public array $options = [])
+    public function __construct(public array $options = [], public bool $useLabelOnly = false)
     {
         //
     }
