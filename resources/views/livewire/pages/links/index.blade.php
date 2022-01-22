@@ -1,7 +1,10 @@
 <div>
     <div class="flex justify-between mb-4">
         <x-text.h1>Link Bank</x-text.h1>
-        <x-buttons.primary-link href="{{ route('links.create') }}"><i class="lni lni-plus mr-2"></i>Add New</x-buttons.primary-link>
+        <div>
+            <x-select-input :options="App\Enums\LinkStatus::toArray()"/>
+            <x-buttons.primary-link href="{{ route('links.create') }}"><i class="lni lni-plus mr-2"></i>Add New</x-buttons.primary-link>
+        </div>
     </div>
 
     <x-card>
