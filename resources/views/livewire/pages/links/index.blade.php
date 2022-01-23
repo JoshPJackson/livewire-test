@@ -1,10 +1,10 @@
 <div>
     <div class="flex justify-between mb-4">
-        <x-text.h1>Link Bank</x-text.h1>
+        <x-text.h1>Models</x-text.h1>
         <div class="flex">
             <span class="self-center mr-3">Filter:</span>
-            <x-select-input :options="$stateOptions" class="mr-3 text-center" wire:model="stateFilterValue" wire:change="filterByState" placeholder="State"/>
-            <x-buttons.primary-link href="{{ route('links.create') }}"><i class="lni lni-plus mr-2"></i>Add New</x-buttons.primary-link>
+            <x-basic-input wire:model="searchFilterValue" wire:change="search"/>
+            <x-select-input :options="$stateOptions" class="mr-3 text-center" wire:model="stateFilterValue" wire:change="search" placeholder="State"/>
         </div>
     </div>
 
@@ -36,8 +36,8 @@
                                     <span class="text-warning">Disabled</span>
                             @endswitch
                         </td>
-                        <td class="p-3">{{ $link->unique_interactions_count }}</td>
-                        <td class="p-3">{{ $link->interactions_count }}</td>
+                        <td class="p-3">{{ $link->unique_interactions_count ?? 'missing' }}</td>
+                        <td class="p-3">{{ $link->interactions_count ?? 'missing' }}</td>
                     </tr>
                 @endforeach
             </tbody>

@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Pages\Links;
 
 use App\Enums\LinkStatus;
+use App\Models\Link;
 use App\Models\UserLink;
 use App\Services\InteractionStatsService;
 use Illuminate\Support\Collection;
@@ -13,6 +14,8 @@ class Index extends Component
     public Collection $links;
 
     public string $stateFilterValue = '';
+
+    public string $searchFilterValue = '';
 
     public array $stateOptions = [];
 
@@ -30,18 +33,14 @@ class Index extends Component
         $this->interactionStatsService = $interactionStatsService;
     }
 
-    public function filterByState()
+    public function search()
     {
-        if ($this->stateFilterValue) {
-            $this->links = UserLink::withTotalInteractionsCount()->withTotalUniqueInteractionsCount()->withStatus(LinkStatus::from($this->stateFilterValue))->get();
-        } else {
-            $this->setLinks();
-        }
+        $this->links = Link::withTotalInteractionsCount()->withTotalUniqueInteractionsCount()->get();
     }
 
     private function setLinks()
     {
-        $this->links = UserLink::withTotalInteractionsCount()->withTotalUniqueInteractionsCount()->get();
+        $this->links = Link::withTotalInteractionsCount()->withTotalUniqueInteractionsCount()->get();
     }
 
     private function setStateOptions()
@@ -51,6 +50,8 @@ class Index extends Component
 
     public function render()
     {
+
+
         return view('livewire.pages.links.index');
     }
 }

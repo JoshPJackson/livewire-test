@@ -72,6 +72,6 @@ class Link extends Model
     }
 
     public function scopeWithStatus(Builder $builder, LinkStatus $linkStatus) {
-        $builder->where('status', $linkStatus);
+        return $builder->where('status', $linkStatus);
     }
 }
